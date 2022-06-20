@@ -1,0 +1,219 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«Cloud Server» \nELK Server 0.0.0.0/0\n : Device" as _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0
+class "«Container» \nDocker Container Web\n : Execution Environment" as _95_Docker_32_Container_32_Web
+class "«Web Server» \nWebserver 127.0.0.1\n : Infrastructure Resources" as _95_Webserver_32_127_46_0_46_0_46_1
+class "«Infrastructure Stack» \nOrder Stack\n : Infrastructure Resources" as _95_Order_32_Stack
+class "«Test Environment» \nProduction Environment\n : Execution Environment" as _95_Production_32_Environment
+class "«Infrastructure Stack» \nMobile API Stack\n : Infrastructure Resources" as _95_Mobile_32_API_32_Stack
+class "«Production Environment» \nINSTANA_AGENT_HOST\n : Execution Environment" as _95_INSTANA_95_AGENT_95_HOST
+class "«Infrastructure Stack» \nWeb API Stack\n : Infrastructure Resources" as _95_Web_32_API_32_Stack
+class "«Container» \nDocker Container API\n : Execution Environment" as _95_Docker_32_Container_32_API
+class "«Web UI» \nTraditional Web App\n : Component" as _95_Traditional_32_Web_32_App
+class "«Web UI» \nWebApp MVC : Component" as _95_WebApp_32_MVC
+class "«Facade» \nWeb Client Gateway\n : Component" as _95_Web_32_Client_32_Gateway
+class "«Web UI» \nSPA Web App : Component" as _95_SPA_32_Web_32_App
+class "«Container» \nDocker Container SPA\n : Execution Environment" as _95_Docker_32_Container_32_SPA
+class "«Infrastructure Stack» \nWeb App MVC Stack\n : Infrastructure Resources" as _95_Web_32_App_32_MVC_32_Stack
+class "«Service» \nMarketing Service\n : Component" as _95_Marketing_32_Service
+class "«Facade» \nMobile Gateway\n : Component" as _95_Mobile_32_Gateway
+class "«Web UI» \nMobile App : Component" as _95_Mobile_32_App
+class "«Container» \nDocker Container Mobile API\n : Execution Environment" as _95_Docker_32_Container_32_Mobile_32_API
+class "«Service» \nIdentity Service\n : Component" as _95_Identity_32_Service
+class "«Service» \nBasket Service\n : Component" as _95_Basket_32_Service
+class "«Pub/Sub Component, Event\nSourcing» \nEvent Bus : Component" as _95_Event_32_Bus
+class "«Service» \nOrder Service : Component" as _95_Order_32_Service
+class "«SQL Server» \nOrder DB : Component" as _95_Order_32_DB
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Container» \nDocker Container Payment Data\n : Execution Environment" as _95_Docker_32_Container_32_Payment_32_Data
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Redis DB» \nBasket DB : Component" as _95_Basket_32_DB
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«SQL Server» \nCatalog DB : Component" as _95_Catalog_32_DB
+class "«Service» \nCatalog Service\n : Component" as _95_Catalog_32_Service
+class "«Container» \nDocker Container Payment\n : Execution Environment" as _95_Docker_32_Container_32_Payment
+class "«Infrastructure Stack» \nPayment API Stack\n : Infrastructure Resources" as _95_Payment_32_API_32_Stack
+class "«Service» \nPayment Service\n : Component" as _95_Payment_32_Service
+class "«Infrastructure Stack» \nPayment Data Stack\n : Infrastructure Resources" as _95_Payment_32_Data_32_Stack
+class "«Container» \nDocker Container Ordering\n : Execution Environment" as _95_Docker_32_Container_32_Ordering
+class "«Service» \nLocations Service\n : Component" as _95_Locations_32_Service
+class "«Mongo DB» \nLocations DB : Component" as _95_Locations_32_DB
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Container» \nDocker Container Location\nData\n : Execution Environment" as _95_Docker_32_Container_32_Location_32_Data
+class "«Infrastructure Stack» \nLocation Data Stack\n : Infrastructure Resources" as _95_Location_32_Data_32_Stack
+class "«Container» \nDocker Container Location\n : Execution Environment" as _95_Docker_32_Container_32_Location
+class "«Infrastructure Stack» \nLocation API Stack\n : Infrastructure Resources" as _95_Location_32_API_32_Stack
+class "«Container» \nDocker Container RabbitMQ\n : Execution Environment" as _95_Docker_32_Container_32_RabbitMQ
+class "«Infrastructure Stack» \nRabbitMQ Stack\n : Infrastructure Resources" as _95_RabbitMQ_32_Stack
+class "«SQL Server» \nidentity DB : Component" as _95_identity_32_DB
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Container» \nDocker Container Identity\nData\n : Execution Environment" as _95_Docker_32_Container_32_Identity_32_Data
+class "«Infrastructure Stack» \nIdentity Data Stack\n : Infrastructure Resources" as _95_Identity_32_Data_32_Stack
+class "«Container» \nDocker Container Identity\n : Execution Environment" as _95_Docker_32_Container_32_Identity
+class "«Infrastructure Stack» \nIdentity API Stack\n : Infrastructure Resources" as _95_Identity_32_API_32_Stack
+class "«SQL Server» \nMarketing DB : Component" as _95_Marketing_32_DB
+class "«Storage Resources» \nnoSQL DB\n : Infrastructure Resources" as _95_noSQL_32_DB
+class "«Container» \nDocker Container Marketing\nData\n : Execution Environment" as _95_Docker_32_Container_32_Marketing_32_Data
+class "«Infrastructure Stack» \nMarketing Data Stack\n : Infrastructure Resources" as _95_Marketing_32_Data_32_Stack
+class "«Container» \nDocker Container Marketing\n : Execution Environment" as _95_Docker_32_Container_32_Marketing
+class "«Infrastructure Stack» \nMarketing API Stack\n : Infrastructure Resources" as _95_Marketing_32_API_32_Stack
+class "«Container» \nDocker Container MVC\n : Execution Environment" as _95_Docker_32_Container_32_MVC
+class "«Infrastructure Stack» \nSPA Web App Stack\n : Infrastructure Resources" as _95_SPA_32_Web_32_App_32_Stack
+class "«Infrastructure Stack» \nWeb Stack\n : Infrastructure Resources" as _95_Web_32_Stack
+_95_Docker_32_Container_32_Web --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Identity: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Ordering: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_API: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_MVC: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_SPA: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Mobile_32_API: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Location: "«deployed on» \n" 
+_95_Webserver_32_127_46_0_46_0_46_1 --> _95_Docker_32_Container_32_Marketing: "«deployed on» \n" 
+_95_Order_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Order_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Order_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Order_32_Stack --> _95_Docker_32_Container_32_Ordering: "«defines deployment of» \n" 
+_95_Production_32_Environment --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Mobile_32_API_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Mobile_32_API_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Mobile_32_API_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Mobile_32_API_32_Stack --> _95_Docker_32_Container_32_Mobile_32_API: "«defines deployment of» \n" 
+_95_INSTANA_95_AGENT_95_HOST --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Web_32_API_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Web_32_API_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Web_32_API_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Web_32_API_32_Stack --> _95_Docker_32_Container_32_API: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_API --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Traditional_32_Web_32_App --> _95_WebApp_32_MVC: "«HTTP, HTTPS» \n" 
+_95_Traditional_32_Web_32_App --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Traditional_32_Web_32_App --> _95_Docker_32_Container_32_API: "«deployed on» \n" 
+_95_WebApp_32_MVC --> _95_Web_32_Client_32_Gateway: "«RESTful HTTP» \n" 
+_95_WebApp_32_MVC --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_WebApp_32_MVC --> _95_Docker_32_Container_32_MVC: "«deployed on» \n" 
+_95_Web_32_Client_32_Gateway --> _95_Marketing_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Identity_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Basket_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Order_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Locations_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Catalog_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Payment_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Web_32_Client_32_Gateway --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Web_32_Client_32_Gateway --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_SPA_32_Web_32_App --> _95_Web_32_Client_32_Gateway: "«RESTful HTTP» \n" 
+_95_SPA_32_Web_32_App --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_SPA_32_Web_32_App --> _95_Docker_32_Container_32_SPA: "«deployed on» \n" 
+_95_Docker_32_Container_32_SPA --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Web_32_App_32_MVC_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Web_32_App_32_MVC_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Web_32_App_32_MVC_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Web_32_App_32_MVC_32_Stack --> _95_Docker_32_Container_32_SPA: "«defines deployment of» \n" 
+_95_Marketing_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Marketing_32_Service --> _95_Event_32_Bus: "«Subscriber» \n{subscribesTo =\n["userLocationUpdated"]}\n" 
+_95_Marketing_32_Service --> _95_Marketing_32_DB: "«Database Connector» \n" 
+_95_Marketing_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Marketing_32_Service --> _95_Docker_32_Container_32_Marketing: "«deployed on» \n" 
+_95_Mobile_32_Gateway --> _95_Marketing_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Identity_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Basket_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Order_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Locations_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Catalog_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Payment_32_Service: "«Asynchronous, RESTful HTTP»\n\n" 
+_95_Mobile_32_Gateway --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Mobile_32_Gateway --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_Mobile_32_App --> _95_Mobile_32_Gateway: "«RESTful HTTP» \n" 
+_95_Mobile_32_App --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Mobile_32_App --> _95_Docker_32_Container_32_Mobile_32_API: "«deployed on» \n" 
+_95_Docker_32_Container_32_Mobile_32_API --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Identity_32_Service --> _95_identity_32_DB: "«Database Connector» \n" 
+_95_Identity_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Identity_32_Service --> _95_Docker_32_Container_32_Identity: "«deployed on» \n" 
+_95_Basket_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Basket_32_Service --> _95_Event_32_Bus: "«Publisher, Subscriber» \n{publishes =\n["userCheckout"], subscribesTo =\n["product",\n"orderStarted"]}\n" 
+_95_Basket_32_Service --> _95_Basket_32_DB: "«Database Connector» \n" 
+_95_Basket_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Basket_32_Service --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_Event_32_Bus --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Event_32_Bus --> _95_Docker_32_Container_32_RabbitMQ: "«deployed on» \n" 
+_95_Order_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Order_32_Service --> _95_Event_32_Bus: "«Publisher, Subscriber» \n{publishes =\n["orderStatus",\n"orderStarted",\n"gracePeriod"], subscribesTo =\n["orderPayment",\n"orderStock",\n"userCheckout",\n"gracePeriod"]}\n" 
+_95_Order_32_Service --> _95_Order_32_DB: "«Database Connector» \n" 
+_95_Order_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Order_32_Service --> _95_Docker_32_Container_32_Ordering: "«deployed on» \n" 
+_95_Order_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_Payment_32_Data: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_Payment_32_Data: "«deployed on» \n" 
+_95_Basket_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_Payment_32_Data: "«deployed on» \n" 
+_95_Catalog_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_Catalog_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Catalog_32_Service --> _95_Event_32_Bus: "«Publisher, Subscriber» \n{publishes =\n["product", "orderStock"],\nsubscribesTo = ["orderStatus"]}\n" 
+_95_Catalog_32_Service --> _95_Catalog_32_DB: "«Database Connector» \n" 
+_95_Catalog_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Catalog_32_Service --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_Docker_32_Container_32_Payment --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Payment_32_API_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Payment_32_API_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Payment_32_API_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Payment_32_API_32_Stack --> _95_Docker_32_Container_32_Payment: "«defines deployment of» \n" 
+_95_Payment_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Payment_32_Service --> _95_Event_32_Bus: "«Publisher, Subscriber» \n{publishes =\n["orderPayment"], subscribesTo =\n["orderStatus"]}\n" 
+_95_Payment_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Payment_32_Service --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_Payment_32_Data_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Payment_32_Data_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Payment_32_Data_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Payment_32_Data_32_Stack --> _95_Docker_32_Container_32_Payment_32_Data: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Ordering --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Locations_32_Service --> _95_Identity_32_Service: "«RESTful HTTP, Linked to Middleware\nHandler»\n\n{handler = "ASP.NET Identity"}\n" 
+_95_Locations_32_Service --> _95_Event_32_Bus: "«Publisher» \n{publishes =\n["userLocationUpdated"]}\n" 
+_95_Locations_32_Service --> _95_Locations_32_DB: "«Database Connector» \n" 
+_95_Locations_32_Service --> _95_Webserver_32_127_46_0_46_0_46_1: "«deployed on» \n" 
+_95_Locations_32_Service --> _95_Docker_32_Container_32_Location: "«deployed on» \n" 
+_95_Locations_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_Location_32_Data: "«deployed on» \n" 
+_95_Location_32_Data_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Location_32_Data_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Location_32_Data_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Location_32_Data_32_Stack --> _95_Docker_32_Container_32_Location_32_Data: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Location --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Location_32_API_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Location_32_API_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Location_32_API_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Location_32_API_32_Stack --> _95_Docker_32_Container_32_Location: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_RabbitMQ --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_RabbitMQ_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_RabbitMQ_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_RabbitMQ_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_RabbitMQ_32_Stack --> _95_Docker_32_Container_32_RabbitMQ: "«defines deployment of» \n" 
+_95_identity_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_Identity_32_Data: "«deployed on» \n" 
+_95_Identity_32_Data_32_Stack --> _95_Docker_32_Container_32_Identity_32_Data: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Identity --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Identity_32_API_32_Stack --> _95_Docker_32_Container_32_Identity: "«defines deployment of» \n" 
+_95_Marketing_32_DB --> _95_noSQL_32_DB: "«deployed on» \n" 
+_95_noSQL_32_DB --> _95_Docker_32_Container_32_Marketing_32_Data: "«deployed on» \n" 
+_95_Marketing_32_Data_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Marketing_32_Data_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Marketing_32_Data_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Marketing_32_Data_32_Stack --> _95_Docker_32_Container_32_Marketing_32_Data: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Marketing --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Marketing_32_API_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_Marketing_32_API_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Marketing_32_API_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Marketing_32_API_32_Stack --> _95_Docker_32_Container_32_Marketing: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_MVC --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_SPA_32_Web_32_App_32_Stack --> _95_Webserver_32_127_46_0_46_0_46_1: "«defines deployment of» \n" 
+_95_SPA_32_Web_32_App_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_SPA_32_Web_32_App_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_SPA_32_Web_32_App_32_Stack --> _95_Docker_32_Container_32_MVC: "«defines deployment of» \n" 
+_95_Web_32_Stack --> _95_Docker_32_Container_32_Web: "«defines deployment of» \n" 
+@enduml

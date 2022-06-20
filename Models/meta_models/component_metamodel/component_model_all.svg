@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="198px" preserveAspectRatio="none" style="width:278px;height:198px;" version="1.1" viewBox="0 0 278 198" width="278px" zoomAndPan="magnify"><defs><filter height="300%" id="fic7c828yvxdv" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[abf1d4ca4ed1df70f8bf95a7c2e42e2e]
+class _95_Component--><rect fill="#FFFFFF" filter="url(#fic7c828yvxdv)" height="35.2979" id="_95_Component" style="stroke: #383838; stroke-width: 1.5;" width="71" x="19.5" y="152"/><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="22.5" y="167.3179">«metaclass»</text><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="63" x="23.5" y="179.9668">Component</text><!--MD5=[b2b38eb2a81d632d6243bd808276fb3e]
+class _95_Component_32_Type--><rect fill="#FFFFFF" filter="url(#fic7c828yvxdv)" height="35.2979" id="_95_Component_32_Type" style="stroke: #383838; stroke-width: 1.5;" width="98" x="6" y="18.5"/><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="21" y="33.8179">«stereotype»</text><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="92" x="9" y="46.4668">Component Type</text><!--MD5=[cbbb30278c1b999f3b7e899aa588f4a4]
+class _95_Connector_32_Type--><rect fill="#FFFFFF" filter="url(#fic7c828yvxdv)" height="55.9468" id="_95_Connector_32_Type" style="stroke: #383838; stroke-width: 1.5;" width="99" x="139.5" y="8"/><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="155" y="23.3179">«stereotype»</text><text fill="#000000" font-family="Arial" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="85" x="146.5" y="35.9668">Connector Type</text><line style="stroke: #383838; stroke-width: 1.5;" x1="140.5" x2="237.5" y1="43.2979" y2="43.2979"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="145.5" y="57.6157">description: String</text><!--MD5=[425cd2c39d008435b66a7e3df3f5123a]
+link _95_Component to _95_Component--><path d="M90.55,158.28 C108.93,156.56 125.5,160.3 125.5,169.5 C125.5,177.84 111.89,181.69 95.66,181.06 " fill="none" id="_95_Component-&gt;_95_Component" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="90.55,180.72,99.2683,185.3015,95.5392,181.0479,99.7929,177.3188,90.55,180.72" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="132" x="131.5" y="167.3179">connected to [extended by:</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="86" x="156" y="179.9668">'Connector Type']</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="4" x="101.5333" y="153.2422">*</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="4" x="101.5333" y="180.1001">*</text><!--MD5=[61f1fc3ec672c79e0cadfca8bf994676]
+link _95_Component_32_Type to _95_Component--><path d="M55,53.65 C55,77.27 55,120.52 55,146.67 " fill="none" id="_95_Component_32_Type-&gt;_95_Component" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="55,151.98,59,142.98,55,146.98,51,142.98,55,151.98" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="56" y="105.3179">«extended»</text><text fill="#000000" font-family="Arial" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="0" x="86" y="117.9668"/><!--MD5=[5be277200cab754f5b40ab23108cca2f]
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«metaclass»\nComponent" as _95_Component
+class "«stereotype»\nComponent Type" as _95_Component_32_Type
+class "«stereotype»\nConnector Type" as _95_Connector_32_Type{
+description: String
+}
+
+_95_Component " * "  - ->  " * " _95_Component: "connected to [extended by: \n'Connector Type']" 
+_95_Component_32_Type - -> _95_Component: "«extended»\n"
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 12:02:15 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 17.0.1+12-LTS-39
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: AT
+--></g></svg>

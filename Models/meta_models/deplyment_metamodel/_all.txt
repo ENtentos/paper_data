@@ -1,0 +1,120 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«metaclass»\nDeployment Node" as _95_Deployment_32_Node
+class "«metaclass»\nDevice" as _95_Device
+class "«stereotype»\nDevice Type" as _95_Device_32_Type
+class "«stereotype»\nServer" as _95_Server
+class "«stereotype»\nWeb Server" as _95_Web_32_Server
+class "«stereotype»\nApplication Server" as _95_Application_32_Server
+class "«stereotype»\nCloud Server" as _95_Cloud_32_Server
+class "«stereotype»\nCloud" as _95_Cloud
+class "«stereotype»\nPaaS Cloud" as _95_PaaS_32_Cloud
+class "«stereotype»\nCloud VM" as _95_Cloud_32_VM
+class "«stereotype»\nVirtual Machine Device" as _95_Virtual_32_Machine_32_Device
+class "«stereotype»\nClient Workstation" as _95_Client_32_Workstation
+class "«stereotype»\nMobile Device" as _95_Mobile_32_Device
+class "«stereotype»\nEmbedded Device" as _95_Embedded_32_Device
+class "«stereotype»\nIoT Device" as _95_IoT_32_Device
+class "«metaclass»\nInfrastructure Resources" as _95_Infrastructure_32_Resources
+class "«stereotype»\nInfrastructure Resources Type" as _95_Infrastructure_32_Resources_32_Type
+class "«stereotype»\nInfrastructure Stack" as _95_Infrastructure_32_Stack
+class "«stereotype»\nWeb Server" as _95_Web_32_Server
+class "«stereotype»\nStorage Resources" as _95_Storage_32_Resources
+class "«stereotype»\nNetwork Resources" as _95_Network_32_Resources
+class "«stereotype»\nCompute Resources" as _95_Compute_32_Resources
+class "«metaclass»\nExecution Environment" as _95_Execution_32_Environment
+class "«stereotype»\nExecution Environment Type" as _95_Execution_32_Environment_32_Type
+class "«stereotype»\nCloud Environment" as _95_Cloud_32_Environment
+class "«stereotype»\nPublic Cloud" as _95_Public_32_Cloud
+class "«stereotype»\nPrivate Cloud" as _95_Private_32_Cloud
+class "«stereotype»\nVirtual Private Cloud" as _95_Virtual_32_Private_32_Cloud
+class "«stereotype»\nServer" as _95_Server
+class "«stereotype»\nWeb Server" as _95_Web_32_Server
+class "«stereotype»\nVirtual Machine" as _95_Virtual_32_Machine
+class "«stereotype»\nContainer" as _95_Container
+class "«stereotype»\nCluster" as _95_Cluster
+class "«stereotype»\nOn-Premises" as _95_On_45_Premises
+class "«stereotype»\nDatacenter" as _95_Datacenter
+class "«stereotype»\nTest Environment" as _95_Test_32_Environment
+class "«stereotype»\nProduction Environment" as _95_Production_32_Environment
+class "«stereotype»\nStaging Environment" as _95_Staging_32_Environment
+class "«metaclass»\nComponent" as _95_Component
+class "«stereotype»\nDeployment Relation Type" as _95_Deployment_32_Relation_32_Type
+class "«stereotype»\ndeployed on" as _95_deployed_32_on
+class "«stereotype»\ndeployed in container" as _95_deployed_32_in_32_container
+class "«stereotype»\nuses" as _95_uses
+class "«stereotype»\nlaunches" as _95_launches
+class "«stereotype»\nprovides deployment artifacts" as _95_provides_32_deployment_32_artifacts
+class "«stereotype»\ndefines deployment of" as _95_defines_32_deployment_32_of
+class "«stereotype»\nruns on" as _95_runs_32_on
+class "«stereotype»\ncontained in" as _95_contained_32_in
+class "«stereotype»\nDeployment Node Relation Type" as _95_Deployment_32_Node_32_Relation_32_Type
+class "«stereotype»\ndeployed on" as _95_deployed_32_on
+class "«stereotype»\npart of" as _95_part_32_of
+class "«stereotype»\nruns on" as _95_runs_32_on
+class "«stereotype»\nconnects to" as _95_connects_32_to
+class "«stereotype»\ndefines deployment of" as _95_defines_32_deployment_32_of
+class "«stereotype»\nincludes" as _95_includes
+_95_Deployment_32_Node <|--- _95_Device
+_95_Deployment_32_Node <|--- _95_Infrastructure_32_Resources
+_95_Deployment_32_Node <|--- _95_Execution_32_Environment
+_95_Device_32_Type <|--- _95_Server
+_95_Device_32_Type <|--- _95_Client_32_Workstation
+_95_Device_32_Type <|--- _95_Mobile_32_Device
+_95_Device_32_Type <|--- _95_Embedded_32_Device
+_95_Device_32_Type <|--- _95_IoT_32_Device
+_95_Device_32_Type <|--- _95_Cloud
+_95_Device_32_Type <|--- _95_Virtual_32_Machine_32_Device
+_95_Server <|--- _95_Web_32_Server
+_95_Server <|--- _95_Application_32_Server
+_95_Server <|--- _95_Cloud_32_Server
+_95_Cloud <|--- _95_PaaS_32_Cloud
+_95_Cloud <|--- _95_Cloud_32_Server
+_95_Cloud <|--- _95_Cloud_32_VM
+_95_Virtual_32_Machine_32_Device <|--- _95_Cloud_32_VM
+_95_Infrastructure_32_Resources_32_Type <|--- _95_Infrastructure_32_Stack
+_95_Infrastructure_32_Resources_32_Type <|--- _95_Web_32_Server
+_95_Infrastructure_32_Resources_32_Type <|--- _95_Storage_32_Resources
+_95_Infrastructure_32_Resources_32_Type <|--- _95_Network_32_Resources
+_95_Infrastructure_32_Resources_32_Type <|--- _95_Compute_32_Resources
+_95_Execution_32_Environment_32_Type <|--- _95_Cloud_32_Environment
+_95_Execution_32_Environment_32_Type <|--- _95_Server
+_95_Execution_32_Environment_32_Type <|--- _95_Virtual_32_Machine
+_95_Execution_32_Environment_32_Type <|--- _95_Container
+_95_Execution_32_Environment_32_Type <|--- _95_Cluster
+_95_Execution_32_Environment_32_Type <|--- _95_On_45_Premises
+_95_Execution_32_Environment_32_Type <|--- _95_Datacenter
+_95_Execution_32_Environment_32_Type <|--- _95_Test_32_Environment
+_95_Execution_32_Environment_32_Type <|--- _95_Production_32_Environment
+_95_Execution_32_Environment_32_Type <|--- _95_Staging_32_Environment
+_95_Cloud_32_Environment <|--- _95_Public_32_Cloud
+_95_Cloud_32_Environment <|--- _95_Private_32_Cloud
+_95_Cloud_32_Environment <|--- _95_Virtual_32_Private_32_Cloud
+_95_Server <|--- _95_Web_32_Server
+_95_Deployment_32_Relation_32_Type <|--- _95_deployed_32_on
+_95_Deployment_32_Relation_32_Type <|--- _95_uses
+_95_Deployment_32_Relation_32_Type <|--- _95_launches
+_95_Deployment_32_Relation_32_Type <|--- _95_provides_32_deployment_32_artifacts
+_95_Deployment_32_Relation_32_Type <|--- _95_defines_32_deployment_32_of
+_95_Deployment_32_Relation_32_Type <|--- _95_runs_32_on
+_95_Deployment_32_Relation_32_Type <|--- _95_contained_32_in
+_95_deployed_32_on <|--- _95_deployed_32_in_32_container
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_deployed_32_on
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_part_32_of
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_runs_32_on
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_connects_32_to
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_defines_32_deployment_32_of
+_95_Deployment_32_Node_32_Relation_32_Type <|--- _95_includes
+_95_Deployment_32_Node " * "  -->  " * " _95_Deployment_32_Node: "connected to [extended by: \n'Deployment Node Relation Type']" 
+_95_Device_32_Type --> _95_Device: "«extended»\n"
+_95_Infrastructure_32_Resources_32_Type --> _95_Infrastructure_32_Resources: "«extended»\n"
+_95_Execution_32_Environment_32_Type --> _95_Execution_32_Environment: "«extended»\n"
+_95_Component " * "  -->  " * " _95_Component: "connected to" 
+_95_Component " * "  -->  " * " _95_Deployment_32_Node: "deployed on [extended by: \n'Deployment Relation Type']" 
+@enduml

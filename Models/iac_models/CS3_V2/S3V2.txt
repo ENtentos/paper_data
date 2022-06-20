@@ -1,0 +1,212 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«Cloud Server» \nAWS Server 0.0.0.0/0\n : Device" as _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0
+class "«Container» \nDocker Container Shipping\n : Execution Environment" as _95_Docker_32_Container_32_Shipping
+class "«Web Server» \nWebserver 0.0.0.0\n : Infrastructure Resources" as _95_Webserver_32_0_46_0_46_0_46_0
+class "«Infrastructure Stack» \nTool Stack\n : Infrastructure Resources" as _95_Tool_32_Stack
+class "«Container» \nDocker Container Fluentd\n : Execution Environment" as _95_Docker_32_Container_32_Fluentd
+class "«Container» \nDocker Container Load\n : Execution Environment" as _95_Docker_32_Container_32_Load
+class "«Infrastructure Stack» \nCart Stack\n : Infrastructure Resources" as _95_Cart_32_Stack
+class "«Test Environment» \nProduction Environment\n : Execution Environment" as _95_Production_32_Environment
+class "«Infrastructure Stack» \nDispatch Stack\n : Infrastructure Resources" as _95_Dispatch_32_Stack
+class "«Production Environment» \nINSTANA_AGENT_HOST\n : Execution Environment" as _95_INSTANA_95_AGENT_95_HOST
+class "«Infrastructure Stack» \nPayment Stack\n : Infrastructure Resources" as _95_Payment_32_Stack
+class "«Container» \nDocker Container Payment\n : Execution Environment" as _95_Docker_32_Container_32_Payment
+class "«Service» \nPayment : Component" as _95_Payment
+class "«Facade» \nNGINX API Gateway\n : Component" as _95_NGINX_32_API_32_Gateway
+class "«Service» \nCatalogue : Component" as _95_Catalogue
+class "«Service» \nCart : Component" as _95_Cart
+class "«Database» \nCart and Anonymous User Count\nDB\n : Component" as _95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB
+class "«Service» \nUser : Component" as _95_User
+class "«Database» \nCatalogue Users Orders DB\n : Component" as _95_Catalogue_32_Users_32_Orders_32_DB
+class "«Container» \nDocker Container Catalog DB\n : Execution Environment" as _95_Docker_32_Container_32_Catalog_32_DB
+class "«Infrastructure Stack» \nMongo Stack\n : Infrastructure Resources" as _95_Mongo_32_Stack
+class "«Container» \nDocker Container Mongo DB\n : Execution Environment" as _95_Docker_32_Container_32_Mongo_32_DB
+class "«Storage Resources» \nMongo DB\n : Infrastructure Resources" as _95_Mongo_32_DB
+class "«Logging» \nLogstash : Component" as _95_Logstash
+class "«Container» \nDocker Container User DB\n : Execution Environment" as _95_Docker_32_Container_32_User_32_DB
+class "«Tracing, External Component» \nInstana Agent : Component" as _95_Instana_32_Agent
+class "«Service» \nDispatch : Component" as _95_Dispatch
+class "«Message Broker» \nRabbit MQ : Component" as _95_Rabbit_32_MQ
+class "«Container» \nDocker Container RabbitMQ\n : Execution Environment" as _95_Docker_32_Container_32_RabbitMQ
+class "«Infrastructure Stack» \nRabbitMQ Stack\n : Infrastructure Resources" as _95_RabbitMQ_32_Stack
+class "«Container» \nDocker Container Dispatch\n : Execution Environment" as _95_Docker_32_Container_32_Dispatch
+class "«Container» \nDocker Container User\n : Execution Environment" as _95_Docker_32_Container_32_User
+class "«Infrastructure Stack» \nUser Stack\n : Infrastructure Resources" as _95_User_32_Stack
+class "«Service» \nCart Prometheus Monitor\n : Component" as _95_Cart_32_Prometheus_32_Monitor
+class "«Service» \nShipping : Component" as _95_Shipping
+class "«Database» \nRatings and Shipping Cities\nDB\n : Component" as _95_Ratings_32_and_32_Shipping_32_Cities_32_DB
+class "«Service» \nRatings : Component" as _95_Ratings
+class "«Container» \nDocker Container Web\n : Execution Environment" as _95_Docker_32_Container_32_Web
+class "«Infrastructure Stack» \nRatings Stack\n : Infrastructure Resources" as _95_Ratings_32_Stack
+class "«Container» \nDocker Container Shipping\nDB\n : Execution Environment" as _95_Docker_32_Container_32_Shipping_32_DB
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Container» \nDocker Container MySQL DB\n : Execution Environment" as _95_Docker_32_Container_32_MySQL_32_DB
+class "«Monitoring Dashboard» \nFluentd : Component" as _95_Fluentd
+class "«Infrastructure Stack» \nMySQL Stack\n : Infrastructure Resources" as _95_MySQL_32_Stack
+class "«Container» \nDocker Container Cart\n : Execution Environment" as _95_Docker_32_Container_32_Cart
+class "«Container» \nDocker Container Catalog\n : Execution Environment" as _95_Docker_32_Container_32_Catalog
+class "«Infrastructure Stack» \nCatalog Stack\n : Infrastructure Resources" as _95_Catalog_32_Stack
+class "«Client» \nREST API Client\n : Component" as _95_REST_32_API_32_Client
+class "«Web UI» \nWeb UI Client : Component" as _95_Web_32_UI_32_Client
+class "«Container» \nDocker Container API\n : Execution Environment" as _95_Docker_32_Container_32_API
+class "«Service, External Component» \nPaypal Payment Gateway\n : Component" as _95_Paypal_32_Payment_32_Gateway
+class "«Service» \nPayment Prometheus Monitor\n : Component" as _95_Payment_32_Prometheus_32_Monitor
+class "«Container» \nDocker Container Paypal\n : Execution Environment" as _95_Docker_32_Container_32_Paypal
+class "«Infrastructure Stack» \nShipping Stack\n : Infrastructure Resources" as _95_Shipping_32_Stack
+class "«Container» \nDocker Container Web\n : Execution Environment" as _95_Docker_32_Container_32_Web
+class "«Infrastructure Stack» \nWeb Stack\n : Infrastructure Resources" as _95_Web_32_Stack
+_95_Docker_32_Container_32_Shipping --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Shipping: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Catalog: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Shipping_32_DB: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Cart: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_API: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_RabbitMQ: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_MySQL_32_DB: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Mongo_32_DB: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_User_32_DB: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Catalog_32_DB: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Dispatch: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Load: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Fluentd: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_Paypal: "«deployed on» \n" 
+_95_Tool_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Tool_32_Stack --> _95_Docker_32_Container_32_Fluentd: "«defines deployment of» \n" 
+_95_Tool_32_Stack --> _95_Docker_32_Container_32_Load: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Fluentd --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_Load --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Cart_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Cart_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Cart_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Cart_32_Stack --> _95_Docker_32_Container_32_Cart: "«defines deployment of» \n" 
+_95_Production_32_Environment --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Dispatch_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Dispatch_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Dispatch_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Dispatch_32_Stack --> _95_Docker_32_Container_32_Dispatch: "«defines deployment of» \n" 
+_95_INSTANA_95_AGENT_95_HOST --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Payment_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Payment_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Payment_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Payment_32_Stack --> _95_Docker_32_Container_32_Payment: "«defines deployment of» \n" 
+_95_Payment_32_Stack --> _95_Docker_32_Container_32_Paypal: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Payment --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Payment --> _95_Paypal_32_Payment_32_Gateway: "«RESTful HTTP, Synchronous»\n\n" 
+_95_Payment --> _95_User: "«RESTful HTTP, Synchronous»\n\n" 
+_95_Payment --> _95_Cart: "«RESTful HTTP, Synchronous»\n\n" 
+_95_Payment --> _95_Payment_32_Prometheus_32_Monitor: "«In-Memory Connector» \n" 
+_95_Payment --> _95_Instana_32_Agent: "«HTTP/2» \n" 
+_95_Payment --> _95_Rabbit_32_MQ: "«Message Producer» \n{outChannels =\n["orders"]}\n" 
+_95_Payment --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Payment --> _95_Docker_32_Container_32_Payment: "«deployed on» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Catalogue: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_User: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Cart: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Shipping: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Payment: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Ratings: "«RESTful HTTP» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_NGINX_32_API_32_Gateway --> _95_Docker_32_Container_32_API: "«deployed on» \n" 
+_95_Catalogue --> _95_Catalogue_32_Users_32_Orders_32_DB: "«Database Connector» \n{read =\n["products"], write = ["products"]}\n" 
+_95_Catalogue --> _95_Instana_32_Agent: "«HTTP/2» \n" 
+_95_Catalogue --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Catalogue --> _95_Docker_32_Container_32_Catalog: "«deployed on» \n" 
+_95_Cart --> _95_Catalogue: "«RESTful HTTP, Asynchronous»\n\n" 
+_95_Cart --> _95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB: "«Database Connector» \n{read =\n["cart"], write = ["cart"]}\n" 
+_95_Cart --> _95_Cart_32_Prometheus_32_Monitor: "«In-Memory Connector» \n" 
+_95_Cart --> _95_Instana_32_Agent: "«HTTP/2» \n" 
+_95_Cart --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Cart --> _95_Docker_32_Container_32_Cart: "«deployed on» \n" 
+_95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB --> _95_Docker_32_Container_32_User_32_DB: "«deployed on» \n" 
+_95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB --> _95_Mongo_32_DB: "«deployed on» \n" 
+_95_User --> _95_Cart_32_and_32_Anonymous_32_User_32_Count_32_DB: "«Database Connector» \n{read =\n["anonymous-counter"], write =\n["anonymous-counter"]}\n" 
+_95_User --> _95_Catalogue_32_Users_32_Orders_32_DB: "«Database Connector» \n{read =\n["users", "orders"], write =\n["users", "orders"]}\n" 
+_95_User --> _95_Instana_32_Agent: "«HTTP/2» \n" 
+_95_User --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_User --> _95_Docker_32_Container_32_User: "«deployed on» \n" 
+_95_Catalogue_32_Users_32_Orders_32_DB --> _95_Docker_32_Container_32_Catalog_32_DB: "«deployed on» \n" 
+_95_Catalogue_32_Users_32_Orders_32_DB --> _95_Mongo_32_DB: "«deployed on» \n" 
+_95_Docker_32_Container_32_Catalog_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Mongo_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Mongo_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Mongo_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Mongo_32_Stack --> _95_Docker_32_Container_32_Catalog_32_DB: "«defines deployment of» \n" 
+_95_Mongo_32_Stack --> _95_Docker_32_Container_32_Mongo_32_DB: "«defines deployment of» \n" 
+_95_Mongo_32_Stack --> _95_Docker_32_Container_32_User_32_DB: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Mongo_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Mongo_32_DB --> _95_Docker_32_Container_32_Mongo_32_DB: "«deployed on» \n" 
+_95_Mongo_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Logstash --> _95_Docker_32_Container_32_Mongo_32_DB: "«deployed on» \n" 
+_95_Docker_32_Container_32_User_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Dispatch --> _95_Instana_32_Agent: "«HTTP/2» \n" 
+_95_Dispatch --> _95_Rabbit_32_MQ: "«Message Consumer» \n{inChannels =\n["orders"]}\n" 
+_95_Dispatch --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Dispatch --> _95_Docker_32_Container_32_Dispatch: "«deployed on» \n" 
+_95_Rabbit_32_MQ --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Rabbit_32_MQ --> _95_Docker_32_Container_32_RabbitMQ: "«deployed on» \n" 
+_95_Docker_32_Container_32_RabbitMQ --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_RabbitMQ_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_RabbitMQ_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_RabbitMQ_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_RabbitMQ_32_Stack --> _95_Docker_32_Container_32_RabbitMQ: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Dispatch --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_User --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_User_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_User_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_User_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_User_32_Stack --> _95_Docker_32_Container_32_User: "«defines deployment of» \n" 
+_95_Shipping --> _95_Cart: "«RESTful HTTP» \n" 
+_95_Shipping --> _95_Ratings_32_and_32_Shipping_32_Cities_32_DB: "«Database Connector» \n{read =\n["cities", "codes"], write =\n[]}\n" 
+_95_Shipping --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Shipping --> _95_Docker_32_Container_32_Shipping: "«deployed on» \n" 
+_95_Ratings_32_and_32_Shipping_32_Cities_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Ratings_32_and_32_Shipping_32_Cities_32_DB --> _95_Docker_32_Container_32_Shipping_32_DB: "«deployed on» \n" 
+_95_Ratings_32_and_32_Shipping_32_Cities_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_Ratings --> _95_Ratings_32_and_32_Shipping_32_Cities_32_DB: "«Database Connector» \n{read =\n["ratings"], write = ["ratings"]}\n" 
+_95_Ratings --> _95_Catalogue: "«RESTful HTTP» \n" 
+_95_Ratings --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Ratings --> _95_Docker_32_Container_32_Web: "«deployed on» \n" 
+_95_Docker_32_Container_32_Web --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Ratings_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Ratings_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Ratings_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Ratings_32_Stack --> _95_Docker_32_Container_32_Web: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Shipping_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_MySQL_32_DB --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Fluentd --> _95_Docker_32_Container_32_MySQL_32_DB: "«deployed on» \n" 
+_95_MySQL_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_MySQL_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_MySQL_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_MySQL_32_Stack --> _95_Docker_32_Container_32_MySQL_32_DB: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Cart --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_Catalog --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Catalog_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Catalog_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Catalog_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Catalog_32_Stack --> _95_Docker_32_Container_32_Catalog: "«defines deployment of» \n" 
+_95_REST_32_API_32_Client --> _95_NGINX_32_API_32_Gateway: "«RESTful HTTP» \n" 
+_95_Web_32_UI_32_Client --> _95_NGINX_32_API_32_Gateway: "«HTTP» \n" 
+_95_Docker_32_Container_32_API --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Paypal_32_Payment_32_Gateway --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Paypal_32_Payment_32_Gateway --> _95_Docker_32_Container_32_API: "«deployed on» \n" 
+_95_Docker_32_Container_32_Paypal --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Shipping_32_Stack --> _95_Webserver_32_0_46_0_46_0_46_0: "«defines deployment of» \n" 
+_95_Shipping_32_Stack --> _95_Production_32_Environment: "«includes» \n" 
+_95_Shipping_32_Stack --> _95_INSTANA_95_AGENT_95_HOST: "«includes» \n" 
+_95_Shipping_32_Stack --> _95_Docker_32_Container_32_Shipping: "«defines deployment of» \n" 
+_95_Docker_32_Container_32_Web --> _95_AWS_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Web_32_Stack --> _95_Docker_32_Container_32_Web: "«defines deployment of» \n" 
+@enduml

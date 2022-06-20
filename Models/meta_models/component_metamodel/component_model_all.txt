@@ -1,0 +1,17 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«metaclass»\nComponent" as _95_Component
+class "«stereotype»\nComponent Type" as _95_Component_32_Type
+class "«stereotype»\nConnector Type" as _95_Connector_32_Type{
+description: String
+}
+
+_95_Component " * "  -->  " * " _95_Component: "connected to [extended by: \n'Connector Type']" 
+_95_Component_32_Type --> _95_Component: "«extended»\n"
+@enduml

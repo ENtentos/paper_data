@@ -1,0 +1,65 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«stereotype»\nComponent Type" as _95_Component_32_Type
+class "«stereotype»\nService" as _95_Service
+class "«stereotype»\nDatabase" as _95_Database
+class "«stereotype»\nIn-Memory Data Store" as _95_In_45_Memory_32_Data_32_Store
+class "«stereotype»\nPostgreSQL DB" as _95_PostgreSQL_32_DB
+class "«stereotype»\nMySQL DB" as _95_MySQL_32_DB
+class "«stereotype»\nSQL Server" as _95_SQL_32_Server
+class "«stereotype»\nMongo DB" as _95_Mongo_32_DB
+class "«stereotype»\nLDAP Store" as _95_LDAP_32_Store
+class "«stereotype»\nElastic Search Store" as _95_Elastic_32_Search_32_Store
+class "«stereotype»\nMemcached DB" as _95_Memcached_32_DB
+class "«stereotype»\nRedis DB" as _95_Redis_32_DB
+class "«stereotype»\nEvent Store" as _95_Event_32_Store
+class "«stereotype»\nPub/Sub Component" as _95_Pub_47_Sub_32_Component
+class "«stereotype»\nStream Processing" as _95_Stream_32_Processing
+class "«stereotype»\nMessage Broker" as _95_Message_32_Broker
+class "«stereotype»\nEvent Sourcing" as _95_Event_32_Sourcing
+class "«stereotype»\nExternal Component" as _95_External_32_Component
+class "«stereotype»\nClient" as _95_Client
+class "«stereotype»\nFacade" as _95_Facade
+class "«stereotype»\nWeb UI" as _95_Web_32_UI
+class "«stereotype»\nMonitoring" as _95_Monitoring
+class "«stereotype»\nTracing" as _95_Tracing
+class "«stereotype»\nLogging" as _95_Logging
+class "«stereotype»\nOrchestrator" as _95_Orchestrator
+class "«stereotype»\nSaga Orchestrator" as _95_Saga_32_Orchestrator{
+sagas: List
+}
+
+_95_Component_32_Type <|--- _95_Service
+_95_Component_32_Type <|--- _95_Database
+_95_Component_32_Type <|--- _95_Pub_47_Sub_32_Component
+_95_Component_32_Type <|--- _95_Message_32_Broker
+_95_Component_32_Type <|--- _95_Event_32_Sourcing
+_95_Component_32_Type <|--- _95_External_32_Component
+_95_Component_32_Type <|--- _95_Facade
+_95_Component_32_Type <|--- _95_Monitoring
+_95_Component_32_Type <|--- _95_Tracing
+_95_Component_32_Type <|--- _95_Logging
+_95_Component_32_Type <|--- _95_Orchestrator
+_95_Database <|--- _95_In_45_Memory_32_Data_32_Store
+_95_Database <|--- _95_PostgreSQL_32_DB
+_95_Database <|--- _95_MySQL_32_DB
+_95_Database <|--- _95_SQL_32_Server
+_95_Database <|--- _95_Mongo_32_DB
+_95_Database <|--- _95_LDAP_32_Store
+_95_Database <|--- _95_Elastic_32_Search_32_Store
+_95_Database <|--- _95_Memcached_32_DB
+_95_Database <|--- _95_Redis_32_DB
+_95_Database <|--- _95_Event_32_Store
+_95_Pub_47_Sub_32_Component <|--- _95_Stream_32_Processing
+_95_Message_32_Broker <|--- _95_Stream_32_Processing
+_95_Event_32_Sourcing <|--- _95_Stream_32_Processing
+_95_External_32_Component <|--- _95_Client
+_95_Facade <|--- _95_Web_32_UI
+_95_Orchestrator <|--- _95_Saga_32_Orchestrator
+@enduml

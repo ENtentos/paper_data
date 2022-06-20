@@ -1,0 +1,150 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«Cloud Server» \nELK Server 0.0.0.0/0\n : Device" as _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0
+class "«Container» \nDocker Container 0.0.4.8\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_8
+class "«Web Server» \nWebserver 0.0.0.0\n : Infrastructure Resources" as _95_Webserver_32_0_46_0_46_0_46_0
+class "«Monitoring Dashboard» \nKibana : Component" as _95_Kibana
+class "«Monitoring» \nElasticsearch : Component" as _95_Elasticsearch
+class "«Container» \nDocker Container 0.0.3.5\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_3_46_5
+class "«Infrastructure Stack» \nStack 2\n : Infrastructure Resources" as _95_Stack_32_2
+class "«Test Environment» \nProduction Environment\n : Execution Environment" as _95_Production_32_Environment
+class "«Infrastructure Stack» \nStack 1\n : Infrastructure Resources" as _95_Stack_32_1
+class "«Production Environment» \nProduction Environment\n : Execution Environment" as _95_Production_32_Environment
+class "«Infrastructure Stack» \nStack 3\n : Infrastructure Resources" as _95_Stack_32_3
+class "«Staging Environment» \nStaging Environment\n : Execution Environment" as _95_Staging_32_Environment
+class "«Container» \nDocker Container 0.0.3.4\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_3_46_4
+class "«Storage Resources» \nMongo DB\n : Infrastructure Resources" as _95_Mongo_32_DB
+class "«Database» \nOrder DB : Component" as _95_Order_32_DB
+class "«Service» \nOrder Service : Component" as _95_Order_32_Service
+class "«Service» \nAPIGateway : Component" as _95_APIGateway
+class "«Client» \nBrowser : Component" as _95_Browser
+class "«Service» \nCatalog Service\n : Component" as _95_Catalog_32_Service
+class "«Database» \nCatalog DB : Component" as _95_Catalog_32_DB
+class "«Container» \nDocker Container 0.0.3.0\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_3_46_0
+class "«Storage Resources» \nMySQL DB\n : Infrastructure Resources" as _95_MySQL_32_DB
+class "«Container» \nDocker Container 0.0.4.7\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_7
+class "«Service» \nLogin Service : Component" as _95_Login_32_Service
+class "«Database» \nUsert DB : Component" as _95_Usert_32_DB
+class "«Container» \nDocker Container 0.0.4.0\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_0
+class "«Storage Resources» \nUser Mongo DB\n : Infrastructure Resources" as _95_User_32_Mongo_32_DB
+class "«Container» \nDocker Container 0.0.4.4\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_4
+class "«Service» \nCart Service : Component" as _95_Cart_32_Service
+class "«Database» \nCart DB : Component" as _95_Cart_32_DB
+class "«Container» \nDocker Container 0.0.4.8\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_8
+class "«Container» \nDocker Container 0.0.3.12\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_3_46_12
+class "«Service» \nShipping Service\n : Component" as _95_Shipping_32_Service
+class "«Pub/Sub Component» \nRabbitMQ : Component" as _95_RabbitMQ
+class "«Service» \nQueue-Master Service\n : Component" as _95_Queue_45_Master_32_Service
+class "«Container» \nDocker Container 0.0.3.1\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_3_46_1
+class "«Container» \nDocker Container 0.3.6.8\n : Execution Environment" as _95_Docker_32_Container_32_0_46_3_46_6_46_8
+class "«Container» \nDocker Container 0.0.1.1\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_1_46_1
+class "«Container» \nDocker Container 0.0.4.3\n : Execution Environment" as _95_Docker_32_Container_32_0_46_0_46_4_46_3
+class "«Service» \nPayment Service\n : Component" as _95_Payment_32_Service
+_95_Docker_32_Container_32_0_46_0_46_4_46_8 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_3_46_5: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_7: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_3: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_4: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_3_46_12: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_3_46_6_46_8: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_3_46_1: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_3_46_4: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_4_46_0: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_3_46_0: "«deployed on» \n" 
+_95_Webserver_32_0_46_0_46_0_46_0 --> _95_Docker_32_Container_32_0_46_0_46_1_46_1: "«deployed on» \n" 
+_95_Kibana --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Elasticsearch --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_3_46_5 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Stack_32_2 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_2 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_2 --> _95_Staging_32_Environment: "«includes» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_4_46_4: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_3_46_12: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_3_46_6_46_8: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_3_46_1: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_3_46_5: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_4_46_7: "«defines deployment of» \n" 
+_95_Stack_32_2 --> _95_Docker_32_Container_32_0_46_0_46_4_46_3: "«defines deployment of» \n" 
+_95_Production_32_Environment --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Stack_32_1 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_1 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_1 --> _95_Staging_32_Environment: "«includes» \n" 
+_95_Stack_32_1 --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«defines deployment of» \n" 
+_95_Production_32_Environment --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Stack_32_3 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_3 --> _95_Production_32_Environment: "«includes» \n" 
+_95_Stack_32_3 --> _95_Staging_32_Environment: "«includes» \n" 
+_95_Stack_32_3 --> _95_Docker_32_Container_32_0_46_0_46_3_46_4: "«defines deployment of» \n" 
+_95_Stack_32_3 --> _95_Docker_32_Container_32_0_46_0_46_4_46_0: "«defines deployment of» \n" 
+_95_Stack_32_3 --> _95_Docker_32_Container_32_0_46_0_46_3_46_0: "«defines deployment of» \n" 
+_95_Stack_32_3 --> _95_Docker_32_Container_32_0_46_0_46_1_46_1: "«defines deployment of» \n" 
+_95_Staging_32_Environment --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_3_46_4 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Mongo_32_DB --> _95_Docker_32_Container_32_0_46_0_46_3_46_4: "«deployed on» \n" 
+_95_Mongo_32_DB --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Order_32_DB --> _95_Docker_32_Container_32_0_46_0_46_3_46_4: "«deployed on» \n" 
+_95_Order_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Order_32_DB --> _95_Mongo_32_DB: "«deployed on» \n" 
+_95_Order_32_Service --> _95_Shipping_32_Service: "«RESTful HTTP» \n" 
+_95_Order_32_Service --> _95_Order_32_DB: "«Database Connector» \n" 
+_95_Order_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_7: "«deployed on» \n" 
+_95_Order_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_APIGateway --> _95_Catalog_32_Service: "«RESTful HTTP» \n" 
+_95_APIGateway --> _95_Order_32_Service: "«RESTful HTTP» \n" 
+_95_APIGateway --> _95_Login_32_Service: "«RESTful HTTP» \n" 
+_95_APIGateway --> _95_Cart_32_Service: "«RESTful HTTP» \n" 
+_95_APIGateway --> _95_Docker_32_Container_32_0_46_0_46_3_46_12: "«deployed on» \n" 
+_95_APIGateway --> _95_Webserver_32_0_46_0_46_0_46_0: "«runs on» \n" 
+_95_Browser --> _95_APIGateway: "«HTTPS» \n" 
+_95_Catalog_32_Service --> _95_Catalog_32_DB: "«Database Connector» \n" 
+_95_Catalog_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_7: "«deployed on» \n" 
+_95_Catalog_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Catalog_32_DB --> _95_Docker_32_Container_32_0_46_0_46_3_46_0: "«deployed on» \n" 
+_95_Catalog_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Catalog_32_DB --> _95_MySQL_32_DB: "«deployed on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_3_46_0 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_MySQL_32_DB --> _95_Docker_32_Container_32_0_46_0_46_3_46_0: "«deployed on» \n" 
+_95_MySQL_32_DB --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_4_46_7 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Login_32_Service --> _95_Usert_32_DB: "«Database Connector» \n" 
+_95_Login_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_4: "«deployed on» \n" 
+_95_Login_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Usert_32_DB --> _95_Docker_32_Container_32_0_46_0_46_4_46_0: "«deployed on» \n" 
+_95_Usert_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Usert_32_DB --> _95_User_32_Mongo_32_DB: "«deployed on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_4_46_0 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_User_32_Mongo_32_DB --> _95_Docker_32_Container_32_0_46_0_46_4_46_0: "«deployed on» \n" 
+_95_User_32_Mongo_32_DB --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_4_46_4 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Cart_32_Service --> _95_Cart_32_DB: "«Database Connector» \n" 
+_95_Cart_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«deployed on» \n" 
+_95_Cart_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Cart_32_DB --> _95_Docker_32_Container_32_0_46_0_46_3_46_4: "«deployed on» \n" 
+_95_Cart_32_DB --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Cart_32_DB --> _95_Mongo_32_DB: "«deployed on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_4_46_8 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_3_46_12 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Shipping_32_Service --> _95_RabbitMQ: "«Publisher, Subscriber» \n{publishes =\n["shipping"], subscribesTo =\n["shipping"]}\n" 
+_95_Shipping_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_8: "«deployed on» \n" 
+_95_Shipping_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_RabbitMQ --> _95_Docker_32_Container_32_0_46_3_46_6_46_8: "«deployed on» \n" 
+_95_RabbitMQ --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Queue_45_Master_32_Service --> _95_RabbitMQ: "«Publisher, Subscriber» \n{publishes =\n["shipping"], subscribesTo =\n["shipping"]}\n" 
+_95_Queue_45_Master_32_Service --> _95_Docker_32_Container_32_0_46_0_46_3_46_1: "«deployed on» \n" 
+_95_Queue_45_Master_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_3_46_1 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_3_46_6_46_8 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_1_46_1 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Docker_32_Container_32_0_46_0_46_4_46_3 --> _95_ELK_32_Server_32_0_46_0_46_0_46_0_47_0: "«runs on» \n" 
+_95_Payment_32_Service --> _95_Docker_32_Container_32_0_46_0_46_4_46_3: "«deployed on» \n" 
+_95_Payment_32_Service --> _95_Webserver_32_0_46_0_46_0_46_0: "«deployed on» \n" 
+@enduml

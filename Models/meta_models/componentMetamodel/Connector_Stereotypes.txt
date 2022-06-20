@@ -1,0 +1,112 @@
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+hide empty members
+hide circle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam classfontstyle bold
+class "«metaclass»\nComponent" as _95_Component
+class "«stereotype»\nConnector Type" as _95_Connector_32_Type{
+description: String
+}
+
+class "«stereotype»\nDirected" as _95_Directed
+class "«stereotype»\nSynchronous" as _95_Synchronous
+class "«stereotype»\nSynchronous + Asynchronous" as _95_Synchronous_32__43__32_Asynchronous
+class "«stereotype»\nAsynchronous" as _95_Asynchronous
+class "«stereotype»\nCallback" as _95_Callback
+class "«stereotype»\nPolling" as _95_Polling
+class "«stereotype»\nOne Way" as _95_One_32_Way
+class "«stereotype»\nIndirect Relation via API" as _95_Indirect_32_Relation_32_via_32_API
+class "«stereotype»\nIn-Memory Connector" as _95_In_45_Memory_32_Connector
+class "«stereotype»\nDatabase Connector" as _95_Database_32_Connector{
+read: List
+write: List
+read + write: List
+}
+
+class "«stereotype»\nJDBC" as _95_JDBC
+class "«stereotype»\nODBC" as _95_ODBC
+class "«stereotype»\nMongo Wire" as _95_Mongo_32_Wire
+class "«stereotype»\nHDFS" as _95_HDFS
+class "«stereotype»\nRESP" as _95_RESP
+class "«stereotype»\nMySQL Protocol" as _95_MySQL_32_Protocol
+class "«stereotype»\nService Connector" as _95_Service_32_Connector
+class "«stereotype»\nRESTful HTTP" as _95_RESTful_32_HTTP
+class "«stereotype»\nSOAP" as _95_SOAP
+class "«stereotype»\nAVRO" as _95_AVRO
+class "«stereotype»\nGRPC" as _95_GRPC
+class "«stereotype»\nThrift" as _95_Thrift
+class "«stereotype»\nWeb Connector" as _95_Web_32_Connector
+class "«stereotype»\nHTTP" as _95_HTTP
+class "«stereotype»\nHTTPS" as _95_HTTPS
+class "«stereotype»\nHTTP/2" as _95_HTTP_47_2
+class "«stereotype»\nLoosely Coupled Connector" as _95_Loosely_32_Coupled_32_Connector
+class "«stereotype»\nEvent-Based Connector" as _95_Event_45_Based_32_Connector
+class "«stereotype»\nPublisher" as _95_Publisher{
+publishes: List
+}
+
+class "«stereotype»\nSubscriber" as _95_Subscriber{
+subscribesTo: List
+}
+
+class "«stereotype»\nLDAP" as _95_LDAP
+class "«stereotype»\nMemcached Connector" as _95_Memcached_32_Connector
+class "«stereotype»\nMessaging" as _95_Messaging
+class "«stereotype»\nMessage Producer" as _95_Message_32_Producer{
+outChannels: List
+}
+
+class "«stereotype»\nMessage Consumer" as _95_Message_32_Consumer{
+inChannels: List
+}
+
+class "«stereotype»\nJMS" as _95_JMS
+class "«stereotype»\nSTOMP" as _95_STOMP
+class "«stereotype»\nLinked to Middleware Handler" as _95_Linked_32_to_32_Middleware_32_Handler{
+handler: String
+}
+
+_95_Connector_32_Type <|--- _95_Directed
+_95_Connector_32_Type <|--- _95_Synchronous
+_95_Connector_32_Type <|--- _95_Asynchronous
+_95_Connector_32_Type <|--- _95_Indirect_32_Relation_32_via_32_API
+_95_Connector_32_Type <|--- _95_In_45_Memory_32_Connector
+_95_Connector_32_Type <|--- _95_Database_32_Connector
+_95_Connector_32_Type <|--- _95_Service_32_Connector
+_95_Connector_32_Type <|--- _95_Web_32_Connector
+_95_Connector_32_Type <|--- _95_Loosely_32_Coupled_32_Connector
+_95_Connector_32_Type <|--- _95_LDAP
+_95_Connector_32_Type <|--- _95_Memcached_32_Connector
+_95_Connector_32_Type <|--- _95_Messaging
+_95_Connector_32_Type <|--- _95_Linked_32_to_32_Middleware_32_Handler
+_95_Synchronous <|--- _95_Synchronous_32__43__32_Asynchronous
+_95_Asynchronous <|--- _95_Synchronous_32__43__32_Asynchronous
+_95_Asynchronous <|--- _95_Callback
+_95_Asynchronous <|--- _95_Polling
+_95_Asynchronous <|--- _95_One_32_Way
+_95_Database_32_Connector <|--- _95_JDBC
+_95_Database_32_Connector <|--- _95_ODBC
+_95_Database_32_Connector <|--- _95_Mongo_32_Wire
+_95_Database_32_Connector <|--- _95_HDFS
+_95_Database_32_Connector <|--- _95_RESP
+_95_Database_32_Connector <|--- _95_MySQL_32_Protocol
+_95_Service_32_Connector <|--- _95_RESTful_32_HTTP
+_95_Service_32_Connector <|--- _95_SOAP
+_95_Service_32_Connector <|--- _95_AVRO
+_95_Service_32_Connector <|--- _95_GRPC
+_95_Service_32_Connector <|--- _95_Thrift
+_95_Web_32_Connector <|--- _95_HTTP
+_95_Web_32_Connector <|--- _95_HTTPS
+_95_Web_32_Connector <|--- _95_HTTP_47_2
+_95_Loosely_32_Coupled_32_Connector <|--- _95_Event_45_Based_32_Connector
+_95_Event_45_Based_32_Connector <|--- _95_Publisher
+_95_Event_45_Based_32_Connector <|--- _95_Subscriber
+_95_Messaging <|--- _95_Message_32_Producer
+_95_Messaging <|--- _95_Message_32_Consumer
+_95_Messaging <|--- _95_JMS
+_95_Messaging <|--- _95_STOMP
+_95_Component " * "  -->  " * " _95_Component: "connected to [extended by: \n'Connector Type']" 
+@enduml
